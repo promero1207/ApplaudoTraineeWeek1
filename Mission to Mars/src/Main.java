@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String [] args)  {
-        String phase1 = "/Users/paul_/Desktop/phase1.txt";
-        String phase2 = "/Users/paul_/Desktop/phase2.txt";
+        String phase1 = "phase1.txt";
+        String phase2 = "phase2.txt";
 
         Simulation simulation = new Simulation();
 

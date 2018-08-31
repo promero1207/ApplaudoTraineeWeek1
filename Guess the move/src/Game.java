@@ -10,7 +10,7 @@ public class Game {
      * @return created file from the text document
      */
     public File loadFile(){
-        File file = new File("/Users/paul_/Desktop/movies.txt");
+        File file = new File("movies.txt");
         return file;
     }
 
@@ -21,7 +21,7 @@ public class Game {
      */
     public ArrayList<String> readFile(){
         Scanner scanner = null;
-        ArrayList<String> libros = new ArrayList<String>();
+        ArrayList<> book = new ArrayList<>();
         File file = loadFile();
         try {
             scanner = new Scanner(file);
@@ -32,10 +32,10 @@ public class Game {
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                libros.add(line);
+                book.add(line);
             }
         }
-        return libros;
+        return book;
     }
 
     /**
@@ -44,10 +44,10 @@ public class Game {
      */
     public String getRandomMovie(){
         int number;
-        ArrayList<String> libros = readFile();
-        if(libros.size() != 0) {
-            number = (int) (Math.random() * libros.size());
-            return libros.get(number);
+        ArrayList<String> books = readFile();
+        if(books.size() != 0) {
+            number = (int) (Math.random() * books.size());
+            return books.get(number);
         }
         else{
             return "";
@@ -60,10 +60,11 @@ public class Game {
      */
     public void play(String unknownBook){
 
-        Integer score;
+        int score;
         String guessedLetter,tempString;
         Scanner scanner;
         Boolean band;
+
         score = 0;
         band = true;
 
@@ -107,8 +108,6 @@ public class Game {
                     band = false;
                     System.out.println("You win!");
                 }
-
-
             }
 
         }
