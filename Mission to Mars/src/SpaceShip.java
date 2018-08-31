@@ -17,7 +17,7 @@ public interface SpaceShip {
     Boolean land();
 
     /**
-     * Method that verifies that the rocket has space for caring an intem
+     * Method that verifies that the rocket has space for caring an item
      * @param item Item to be carried in the rocket
      * @return true if the rocket actual weight is less than the max cargo capacity; false if the rocket actual weight is grater than the max cargo capacity;
      */
