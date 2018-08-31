@@ -23,7 +23,7 @@ public class Simulation {
         if(scanner != null) {
             while (scanner.hasNextLine()) {
                 String[] line = scanner.nextLine().split("=");
-                itemList.add(new Item(line[0], Integer.parseInt(line[1])));
+                itemList.add(new Item(Integer.parseInt(line[1])));
             }
         }
 
@@ -93,7 +93,7 @@ public class Simulation {
 
         for(int i=0; i < rockets.size(); i++){
             launching = rockets.get(i).launch();
-            landing = rockets.get(i).landing();
+            landing = rockets.get(i).land();
 
             if(launching && landing){
                 budget += rockets.get(i).getCost();
@@ -102,7 +102,7 @@ public class Simulation {
 
                 while(!launching || !landing){
                     launching = rockets.get(i).launch();
-                    landing = rockets.get(i).landing();
+                    landing = rockets.get(i).land();
                     budget += rockets.get(i).getCost();
                 }
                 budget += rockets.get(i).getCost();

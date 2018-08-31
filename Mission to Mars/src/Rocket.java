@@ -1,16 +1,16 @@
 public class Rocket implements SpaceShip {
 
     /**
-     * Class Atributes
+     * Class fields
      */
 
-    protected Integer cost;
-    protected Integer weight;
-    protected Integer maxCargo;
-    protected double chanceLaunch;
-    protected double chanceLand;
-    protected Integer currentWeight;
-    protected Integer totalCost;
+    private Integer cost;
+    private Integer weight;
+    private Integer maxCargo;
+    double chanceLaunch;
+    double chanceLand;
+    private Integer currentWeight;
+
 
     /**
      *
@@ -18,15 +18,12 @@ public class Rocket implements SpaceShip {
      * @param weight rocket weight for U1 or U2
      * @param maxCargo rocket maximum load for U1 or U2
      * @param currentWeight rocket current weight for U1 or U2
-     * @param totalCost rocket totalcost for U1 or U2
      */
-    public Rocket(Integer cost, Integer weight, Integer maxCargo, Integer currentWeight, Integer totalCost) {
+    Rocket(Integer cost, Integer weight, Integer maxCargo, Integer currentWeight) {
         this.cost = cost;
         this.weight = weight;
         this.maxCargo = maxCargo;
         this.currentWeight = currentWeight;
-        this.totalCost = totalCost;
-
     }
 
     /**
@@ -38,18 +35,13 @@ public class Rocket implements SpaceShip {
     }
 
     @Override
-    public Boolean landing() {
+    public Boolean land() {
         return true;
     }
 
     @Override
     public Boolean canCarry(Item item) {
-        if(maxCargo >= (currentWeight + item.getWeight())){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return maxCargo >= (currentWeight + item.getWeight());
     }
 
     @Override
@@ -62,59 +54,21 @@ public class Rocket implements SpaceShip {
      * Setters and Getters
      */
 
-    public Integer getCost() {
+    Integer getCost() {
         return cost;
     }
 
-    public void setCost(Integer cost) {
-        this.cost = cost;
-    }
-
-    public Integer getWeight() {
+    Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(Integer weight) {
-        this.weight = weight;
-    }
-
-    public Integer getMaxCargo() {
+    Integer getMaxCargo() {
         return maxCargo;
     }
 
-    public void setMaxCargo(Integer maxCargo) {
-        this.maxCargo = maxCargo;
-    }
-
-    public double getChanceLaunch() {
-        return chanceLaunch;
-    }
-
-    public void setChanceLaunch(double chanceLaunch) {
-        this.chanceLaunch = chanceLaunch;
-    }
-
-    public double getChanceLand() {
-        return chanceLand;
-    }
-
-    public void setChanceLand(double chanceLand) {
-        this.chanceLand = chanceLand;
-    }
-
-    public Integer getCurrentWeight() {
+    Integer getCurrentWeight() {
         return currentWeight;
     }
 
-    public void setCurrentWeight(Integer currentWeight) {
-        this.currentWeight = currentWeight;
-    }
 
-    public Integer getTotalCost() {
-        return totalCost;
-    }
-
-    public void setTotalCost(Integer totalCost) {
-        this.totalCost = totalCost;
-    }
 }
