@@ -21,7 +21,7 @@ public class Game {
      */
     public ArrayList<String> readFile(){
         Scanner scanner = null;
-        ArrayList<> book = new ArrayList<>();
+        ArrayList<String> book = new ArrayList<>();
         File file = loadFile();
         try {
             scanner = new Scanner(file);
