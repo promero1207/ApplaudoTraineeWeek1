@@ -10,8 +10,7 @@ public class Game {
      * @return created file from the text document
      */
     public File loadFile(){
-        File file = new File("movies.txt");
-        return file;
+        return new File("movies.txt");
     }
 
 
@@ -21,7 +20,7 @@ public class Game {
      */
     public ArrayList<String> readFile(){
         Scanner scanner = null;
-        ArrayList<String> book = new ArrayList<>();
+        ArrayList<String> book = new ArrayList<String>();
         File file = loadFile();
         try {
             scanner = new Scanner(file);
